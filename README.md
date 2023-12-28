@@ -13,7 +13,10 @@ npm install
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 ## File Service
-Performs decompress and JSON parse
+Performs decompress and JSON parse. Please note you can use compressed data either of two ways (see `file.service.ts`)
+
+1. Local json gz file lives on angular project (in asset directory) change `const uri = '/assets/json.gz';`
+2. json gz file is hosted on a server e.g. change `const uri = 'https://reg01.vn.co.th/...';`
 
 ## How to use
 
