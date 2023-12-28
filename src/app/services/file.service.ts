@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 window.Buffer = window.Buffer || require("buffer").Buffer;
-const zlib = require('./node-zlib.js');
+const zlib = require('../utilities/node-zlib.js');
 import {lastValueFrom} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
