@@ -13,9 +13,8 @@ export class FileService {
   constructor(private http: HttpClient) {
   }
 
-  async decompressFromFile(): Promise<any> {
-    // const uri = 'https://reg01.vn.co.th/regapiweb/api/th/Classinfo/Classinfogzip'; //works
-    const uri = '/assets/json.gz'; // works
+  async decompressData(): Promise<any> {
+    const uri = '/assets/json.gz'; // OR 'https://reg01.vn.co.th/...'
     try {
       const content: any = await lastValueFrom(this.http.get(uri, {responseType: 'text'}));
       const res = zlib.gunzipSync(Buffer.from(content, 'base64'));

@@ -24,7 +24,7 @@ export class TestComponent{
   }
 
   async testMethod() {
-    const json = await this.fileService.decompressFromFile();
+    const json = await this.fileService.decompressData();
   }
 }
 ```
