@@ -13,8 +13,7 @@ export class AppComponent implements OnInit{
   }
 
   async ngOnInit(): Promise<void> {
-    // const res = this.fileService.decompress('H4sIAAAAAAAAA6vm...');
-    const res = await this.fileService.decompressData();//
-    console.log('JSON Unzipped: ', res);
+    const json = await this.fileService.decompressData();//
+    console.log('JSON Unzipped: ', json);
   }
 }
