@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FileService} from "./services/file.service";
+import {Academic} from "./model/acad.model";
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,16 @@ import {FileService} from "./services/file.service";
 })
 export class AppComponent implements OnInit{
   title = 'gzip-json-data';
+  json: Academic[] | undefined;
 
   constructor(private fileService: FileService) {
   }
 
   async ngOnInit(): Promise<void> {
-    const json = await this.fileService.decompressData();//
-    console.log('JSON Unzipped: ', json);
+    await this.fetchData()
+  }
+
+  async fetchData() {
+    this.json = await this.fileService.decompressData();
   }
 }
