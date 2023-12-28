@@ -1,24 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {FileService} from "./services/file.service";
-import {Academic} from "./model/acad.model";
+import { Component, OnInit } from '@angular/core';
+import { FileService } from './services/file.service';
+import { Academic } from './model/acad.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'gzip-json-data';
-  json: Academic[] | undefined;
+  academicData: Academic[] | undefined;
 
-  constructor(private fileService: FileService) {
-  }
+  constructor(private fileService: FileService) {}
 
   async ngOnInit(): Promise<void> {
-    await this.fetchData()
+    await this.fetchData();
   }
 
   async fetchData() {
-    this.json = await this.fileService.decompressData();
+    this.academicData = await this.fileService.decompressData();
   }
 }
